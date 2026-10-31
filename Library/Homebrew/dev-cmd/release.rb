@@ -3,6 +3,7 @@
 
 require "system_command"
 require "utils/browser"
+require "utils/text"
 
 require "abstract_command"
 
@@ -100,6 +101,14 @@ module Homebrew
             "- [#{match[1]}](#{match[2]})"
           end.sort
           puts blog_post_notes
+
+          release_sponsors = (HOMEBREW_REPOSITORY/"README.md").read[
+            %r{<!-- release-sponsors -->\n(.*?)<!-- /release-sponsors -->}m, 1
+          ].to_s.scan(/\[!\[((?:\\.|[^\]\\])+)\]\(/).flatten.uniq
+          if release_sponsors.present?
+            puts "\nThanks to our top sponsors, #{Utils::Text.to_sentence(release_sponsors)}, " \
+                 "for supporting Homebrew."
+          end
         end
 
         ohai "Generating release notes for #{new_version}"

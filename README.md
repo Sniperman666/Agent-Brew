@@ -16,6 +16,7 @@ We need your funds to pay for software, hardware and hosting around continuous i
 Every donation will be spent on making Homebrew better for our users.
 
 Please consider a regular donation through [GitHub Sponsors](https://github.com/sponsors/Homebrew), [Open Collective](https://opencollective.com/homebrew) or [Patreon](https://www.patreon.com/homebrew).
+Read about [sponsoring Homebrew](https://docs.brew.sh/Sponsoring-Homebrew).
 Homebrew is fiscally hosted by the [Open Source Collective](https://opencollective.com/opensource).
 
 ## 📚 Documentation
@@ -112,6 +113,10 @@ Secure password storage and syncing is provided by [1Password for Teams](https:/
 [![DNSimple](https://cdn.dnsimple.com/assets/resolving-with-us/logo-light.png)](https://dnsimple.com/resolving/homebrew#gh-light-mode-only)
 [![DNSimple](https://cdn.dnsimple.com/assets/resolving-with-us/logo-dark.png)](https://dnsimple.com/resolving/homebrew#gh-dark-mode-only)
 
-Homebrew is generously supported by [Joshua Baer](https://github.com/joshuabaer), [Randy Reddig](https://github.com/ydnar), [Codecademy](https://github.com/Codecademy), [Gusto](https://github.com/Gusto), [b.well](https://github.com/icanbwell), [Workbrew](https://github.com/Workbrew), [GitHub](https://github.com/github) and many other users and organisations via [GitHub Sponsors](https://github.com/sponsors/Homebrew).
+Homebrew is generously supported by Joshua Baer, Randy Reddig, Codecademy, Gusto, b.well, Workbrew, GitHub, William Hern, Gabor Nadai, mkvirtasant, Thinkst Canary, J-Swift, Ajimah, Cameron, Open Broadcaster Software, Ian-Retired, emushack, David Ball, PlanetScale, Richard Moats, Josh E., WonderProxy, Cybozu, Airbnb and many other users and organisations via [GitHub Sponsors](https://github.com/sponsors/Homebrew), [Patreon](https://www.patreon.com/homebrew) and [Open Collective](https://opencollective.com/homebrew).
 
+<!-- release-sponsors -->
 [![GitHub](https://github.com/github.png?size=64)](https://github.com/github)
+[![Thinkst Canary](https://images.opencollective.com/thinkst-canary/ed1556c/avatar/64.png)](https://opencollective.com/thinkst-canary)
+[![Open Broadcaster Software](https://images.opencollective.com/obsproject/64068a5/logo/64.png)](https://opencollective.com/obsproject)
+<!-- /release-sponsors -->
