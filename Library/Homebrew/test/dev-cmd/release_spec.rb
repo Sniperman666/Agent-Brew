@@ -9,7 +9,7 @@ RSpec.describe Homebrew::DevCmd::Release do
 
   describe "#run" do
     test_each(["--major", "--minor", nil].product([true, false])) do |version_flag, has_sponsors|
-      it "handles README release sponsors #{has_sponsors} in #{version_flag.inspect} blog notes" do
+      it "reads release sponsors #{has_sponsors} from origin/main for #{version_flag.inspect} blog notes" do
         readme = mktmpdir/"README.md"
         stub_const("HOMEBREW_REPOSITORY", readme.dirname)
         readme.write <<~'MARKDOWN'
@@ -21,6 +21,14 @@ RSpec.describe Homebrew::DevCmd::Release do
           <!-- /release-sponsors -->
         MARKDOWN
         readme.write readme.read.gsub(/^\[!\[Top.*\n/, "") unless has_sponsors
+        allow(Utils).to receive(:safe_popen_read).with(
+          "git", "-C", HOMEBREW_REPOSITORY, "show", "origin/main:README.md"
+        ).and_return(readme.read)
+        readme.write <<~MARKDOWN
+          <!-- release-sponsors -->
+          [![Local Sponsor](https://example.com/local.png)](https://example.com/local)
+          <!-- /release-sponsors -->
+        MARKDOWN
         allow(Homebrew::EnvConfig).to receive(:no_auto_update?).and_return(false)
         allow(GitHub).to receive_messages(
           issues:                 [],

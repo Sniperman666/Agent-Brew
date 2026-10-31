@@ -102,7 +102,9 @@ module Homebrew
           end.sort
           puts blog_post_notes
 
-          release_sponsors = (HOMEBREW_REPOSITORY/"README.md").read[
+          release_sponsors = Utils.safe_popen_read(
+            "git", "-C", HOMEBREW_REPOSITORY, "show", "origin/main:README.md"
+          )[
             %r{<!-- release-sponsors -->\n(.*?)<!-- /release-sponsors -->}m, 1
           ].to_s.scan(/\[!\[((?:\\.|[^\]\\])+)\]\(/).flatten.uniq
           if release_sponsors.present?
