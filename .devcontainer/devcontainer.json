@@ -1,5 +1,8 @@
 // For format details, see https://aka.ms/devcontainer.json.
 {
+  "mounts": [
+    "source=${localEnv:HOME}/Desktop,target=/host-desktop,type=bind,readonly"
+  ],
   "name": "Homebrew/brew",
   "image": "ghcr.io/homebrew/brew:main",
   "workspaceFolder": "/home/linuxbrew/.linuxbrew/Homebrew",
